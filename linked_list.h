@@ -1,0 +1,32 @@
+#ifndef linked_list_H
+#define linked_list_H
+#include "single_node.h"
+#include <iostream>
+#include <string>
+using namespace std;
+//h file that is is used in the name database file
+template <class NODETYPE>
+class linked_list{
+
+	public:
+		linked_list();
+		~linked_list();
+		linked_list(linked_list<NODETYPE> &originalList);
+		bool InsertRear(NODETYPE value);
+		bool InsertFront(NODETYPE value);
+		bool InsertInOrder(NODETYPE value);
+		bool Remove(NODETYPE & value);
+        bool RemoveFront(NODETYPE & value);
+        bool RemoveRear(NODETYPE & value);
+		bool Search(NODETYPE &value);
+		bool IsEmpty() const;
+		void PrintAll();
+	private:
+		ListNode<NODETYPE> *first;
+		ListNode<NODETYPE> *current;
+		ListNode<NODETYPE> *last;
+
+};
+
+#include "linked_list.cpp"
+#endif
